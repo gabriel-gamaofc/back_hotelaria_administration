@@ -40,5 +40,12 @@ const sequelize = new Sequelize(
 // =======================================================
 // 📦 EXPORTAÇÃO
 // =======================================================
-
+export const connectDatabase = async () => {
+  try {
+    await sequelize.authenticate()
+    console.log('✅ Banco conectado com sucesso')
+  } catch (error) {
+    console.error('❌ Erro ao conectar no banco:', error)
+  }
+}
 export default sequelize
