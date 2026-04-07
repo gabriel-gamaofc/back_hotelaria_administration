@@ -2,12 +2,12 @@ import Sequelize from 'sequelize';
 
 import sequelizeConnection from '../../config/db.mjs';
 
-import UsuarioModel from './usuarioModels.mjs';
+import produtosModels from './produtosModels.mjs';
 
 const sequelize = sequelizeConnection;
 
 
-const Usuario = UsuarioModel(sequelize, Sequelize.DataTypes);
+const produtos = produtosModels(sequelize, Sequelize.DataTypes);
 
 
 
@@ -19,7 +19,7 @@ const Usuario = UsuarioModel(sequelize, Sequelize.DataTypes);
 export {
     sequelize,
     Sequelize,
-    Usuario
+    produtos
    
 };
 
