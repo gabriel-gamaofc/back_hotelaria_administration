@@ -13,5 +13,15 @@ class clientesRepository {
         }
     }
 
+    async addCliente({nome, idade, cpf, data_nascimento}) {
+        try{
+           const clienteCriado = await clientes.create({nome, idade, cpf, data_nascimento})
+           return clienteCriado
+        }catch (error){
+            console.error('Erro ao criar cliente:', error);
+            throw new Error('Erro ao criar cliente:', error);
+        }
+    }
+
 }
 export default new clientesRepository();

@@ -1,10 +1,11 @@
 import {Router} from 'express';
 
-import {listarClientes} from '../../controllers/cliente/clienteControllers.mjs'
+import {listarClientes, novoCliente} from '../../controllers/cliente/clienteControllers.mjs'
 
 const   router = Router();
 
 
 router.get('/', listarClientes);
+router.post('/', novoCliente);
 
 export default router
