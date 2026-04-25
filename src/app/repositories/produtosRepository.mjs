@@ -13,5 +13,16 @@ class produtosRepository {
         }
     }
 
+    async addProduto({ nome, valor, caracterisca }) {
+        try {
+            const ProdutoCriado = await produtos.create({nome, valor, caracterisca})
+            return ProdutoCriado
+        } catch (error) {
+            console.error('Erro ao criar produto:', error);
+            throw new Error('Erro ao criar produto:', error);
+        }
+
+    }
+
 }
 export default new produtosRepository();

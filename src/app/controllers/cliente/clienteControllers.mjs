@@ -14,11 +14,12 @@ export const listarClientes = async (req, res) => {
 };
 
 // Criar um novo cliente
+
 export const novoCliente = async (req, res) => {
     const { nome, idade, cpf, data_nascimento} = req.body;
     try {
        if ( !nome || !idade || !cpf || !data_nascimento) {
-            res.status(400).json({ error: 'Todos os campos são obrigatórios' });
+         res.status(400).json({ error: 'Todos os campos são obrigatórios' });
             return;
        }
        const ClienteCriado = await clientesRepository.addCliente({ nome, idade, cpf, data_nascimento})
