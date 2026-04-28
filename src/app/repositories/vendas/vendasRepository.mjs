@@ -2,6 +2,7 @@ import { resumoVendas } from '../../models/index.mjs';
 
 
 class vendasRepository {
+
     async listarvenda() {
         try {
             const vendasGeral = await resumoVendas.findAll();
@@ -12,6 +13,19 @@ class vendasRepository {
             throw new Error('Erro ao listar vendas');
         }
     }
+     async adicionarVendas(dadosVenda) {
+        try {
 
-}
-export default new vendasRepository();
+            const novaVenda = await resumoVendas.create(dadosVenda);
+
+            return novaVenda;
+
+        } catch(erro) {
+            console.error('Erro ao adicionar venda:', erro);
+            throw new Error('Erro ao adicionar venda');
+            }
+        }
+    }
+
+    export default new vendasRepository();
+
