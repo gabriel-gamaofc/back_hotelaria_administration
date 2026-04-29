@@ -12,6 +12,8 @@ export const listagemVendas = async (req, res) => {
 
 };
 
+
+
 export const adicionarVendas = async (req, res) => {
 try {
     const dadosVenda = req.body;

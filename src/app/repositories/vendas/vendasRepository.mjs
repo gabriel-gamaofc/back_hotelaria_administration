@@ -1,4 +1,4 @@
-import { resumoVendas } from '../../models/index.mjs';
+import { resumoVendas , vendas} from '../../models/index.mjs';
 
 
 class vendasRepository {
@@ -16,7 +16,7 @@ class vendasRepository {
      async adicionarVendas(dadosVenda) {
         try {
 
-            const novaVenda = await resumoVendas.create(dadosVenda);
+            const novaVenda = await vendas.create(dadosVenda);
 
             return novaVenda;
 

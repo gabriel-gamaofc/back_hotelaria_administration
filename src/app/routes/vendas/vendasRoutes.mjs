@@ -1,6 +1,6 @@
 import {Router} from 'express';
 
-import {listagemVendas} from '../../controllers/vendas/vendasController.mjs'
+import {listagemVendas, adicionarVendas} from '../../controllers/vendas/vendasController.mjs'
 
 const   router = Router();
 
