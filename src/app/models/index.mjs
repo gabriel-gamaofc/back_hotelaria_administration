@@ -1,13 +1,14 @@
 import Sequelize from 'sequelize';
 
 import sequelizeConnection from '../../config/db.mjs';
-
+import categoriaModels from './categoriaModels.mjs';
 import produtosModels from './produtosModels.mjs';
 import vendasRusomo from './vendas ResumoModels.mjs';
 import clientesModels from './clientesModels.mjs';
 import vendasModels from './vendasModels.mjs';
-const sequelize = sequelizeConnection;
 
+const sequelize = sequelizeConnection;
+const categorias = categoriaModels(sequelize, Sequelize.DataTypes);
 const vendas = vendasModels(sequelize, Sequelize.DataTypes);
 const produtos = produtosModels(sequelize, Sequelize.DataTypes);
 const resumoVendas = vendasRusomo(sequelize, Sequelize.DataTypes);
@@ -24,6 +25,7 @@ export {
     produtos,
     resumoVendas,
     clientes,
-    vendas
+    vendas,
+    categorias
 };
 
